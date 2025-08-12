@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>同志ボット — 公式サイト</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+        <style>
+            body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+</style>
+
+</head>
+
+<script>
+  // 定数（環境に合わせて編集）
+  const BOT_INVITE_URL = "https://discord.com/oauth2/authorize?client_id=1386240737099644960&scope=bot&permissions=562986460712000"
+  const GITHUB_URL = "https://github.com/mellllonsoda/CQbot"
+";
+
+  // ページ内のリンクを差し替え
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-link='invite']").forEach(el => el.href = BOT_INVITE_URL);
+    document.querySelectorAll("[data-link='github']").forEach(el => el.href = GITHUB_URL);
+  });
+</script>
+
+<body class="bg-gray-50 text-gray-900 antialiased">
+
+  <!-- ヘッダー -->
+  <header class="bg-white shadow-sm sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-4">
+          <div class="text-2xl font-extrabold tracking-tight">同志Bot</div>
+          <div class="text-xs text-gray-500">— Discordサーバー向け社会主義語録ボット</div>
+        </div>
+        <nav class="flex items-center gap-3">
+          <a href="#features" class="text-sm hover:underline">機能</a>
+          <a href="#quickstart" class="text-sm hover:underline">導入</a>
+            <a data-link="github" class="text-sm px-3 py-2 rounded-md border border-gray-200 hover:bg-gray-100">GitHub</a>
+            <a data-link="invite" class="text-sm px-4 py-2 rounded-md bg-green-600 text-white shadow-sm hover:opacity-95">サーバーに招待</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- メイン -->
+<main class="max-w-6xl mx-auto px-6 lg:px-8 py-12">
+  <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+    <!-- 左カラム：テキスト -->
+    <div>
+      <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight">
+        故きを温ねて新しきを知る
+      </h1>
+      <p class="mt-6 text-lg text-gray-700">
+        キーワード検出に応じて社会主義語録を自動投稿するDiscordボットです。
+      </p>
+
+      <div class="mt-8 flex gap-3">
+        <a data-link="invite" class="px-5 py-3 rounded-md bg-green-600 text-white font-medium">今すぐ招待</a>
+        <a href="#quickstart" class="px-5 py-3 rounded-md border border-gray-200">導入手順</a>
+      </div>
+    </div>
+
+    <!-- 右カラム：スクショ -->
+    <div class="flex justify-center">
+      <img src="images/demo.png" alt="Bot動作スクリーンショット" class="rounded-lg shadow-lg max-w-full h-auto">
+    </div>
+
+    </section>
+
+    <!-- 機能一覧 -->
+    <section id="features" class="mt-12">
+      <h2 class="text-2xl font-bold">主な機能</h2>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-600">
+        <div class="p-4 bg-white border border-gray-100 rounded-2xl shadow-sm">
+          <div class="font-semibold">キーワード検出</div>
+          <div class="mt-2">メッセージからキーワードを検出し語録を表示</div>
+        </div>
+        <div class="p-4 bg-white border border-gray-100 rounded-2xl shadow-sm">
+          <div class="font-semibold">スラッシュコマンド</div>
+          <div class="mt-2">/random_quoteでいつでも語録を呼び出し</div>
+        </div>
+        <div class="p-4 bg-white border border-gray-100 rounded-2xl shadow-sm">
+          <div class="font-semibold">安全設計</div>
+          <div class="mt-2">Bot自身の投稿は削除可能、誤爆防止</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 導入手順 -->
+    <section id="quickstart" class="mt-12">
+      <h2 class="text-2xl font-bold">クイックスタート</h2>
+      <pre class="mt-4 bg-gray-100 p-4 rounded text-sm overflow-auto"><code>
+# 環境準備
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+# .env に DISCORD_TOKEN を設定
+python bot.py
+      </code></pre>
+    </section>
+
+  <!-- フッター -->
+  <footer class="bg-white border-t mt-12">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 py-6 text-sm text-gray-600 flex flex-col md:flex-row justify-between">
+        <div>MIT License
+        Copyright (c) 2025 mellllonsoda
+
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
